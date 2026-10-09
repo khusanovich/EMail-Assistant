@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Any
 
-from pydantic import Field, PostgresDsn, field_validator
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -18,9 +18,9 @@ class Settings(BaseSettings):
     )
 
     # Database
-    database_url: PostgresDsn = Field(
+    database_url: str = Field(
         default="postgresql+psycopg://jobmail:jobmail@localhost:5432/jobmail",
-        description="PostgreSQL connection URL",
+        description="Database connection URL (PostgreSQL or SQLite for dev)",
     )
 
     # LLM
