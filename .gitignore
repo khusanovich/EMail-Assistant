@@ -58,8 +58,7 @@ htmlcov/
 .tox/
 
 # Alembic
-app/db/migrations/versions/*.py
-!app/db/migrations/versions/.gitkeep
+# (migrations should be committed to version control)
 
 # Docker
 *.pid
